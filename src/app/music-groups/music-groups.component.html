@@ -1,0 +1,82 @@
+<div class="row mt-4">
+  <div class="col-2">
+    <button class="btn btn-outline-primary me-2" (click)="goMusicGroupDef(-1)">
+      Ajouter un groupe
+    </button>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-12">
+    <h4 class="color-primary">
+      Ajouter à partir d'un fichier
+    </h4>
+  </div>
+  <div class="col-12">
+<!--     <input type="file" class="file-upload" onchange="console.log(event.target.files)"> -->
+    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+<!--     <button class="btn btn-outline-success" (click)="sendForm()"> -->
+    <button class="btn btn-outline-success">
+      Ok
+    </button>
+  </div>
+</div>
+
+<div class="mt-4">
+<table class="table table-striped table-hover" style="text-align: center">
+  <thead>
+    <tr>
+      <th>
+          Nom du groupe
+      </th>
+      <th style="max-width: 6vw; width: 6vw; min-width: 6vw">
+          Origine
+      </th>
+      <th style="max-width: 6vw; width: 6vw; min-width: 6vw">
+          Ville
+      </th>
+      <th>
+          Année début
+      </th>
+      <th>
+          Année fin
+      </th>
+      <th style="max-width: 8vw; width: 8vw; min-width: 8vw">
+          Fondateur
+      </th>
+      <th>
+          Membres
+      </th>
+      <th style="max-width: 5vw; width: 5vw; min-width: 5vw">
+          Courrant musical
+      </th>
+      <th style="max-width: 20vw; width: 20vw; min-width: 20vw">
+          Presentation
+      </th>
+      <th style="max-width: 15vw; width: 15vw; min-width: 15vw">
+      </th>
+    </tr>
+  </thead>
+  <tbody class="multiline">
+<!--     <tr *ngFor="let musicGroup of musicGroups" [ngClass]="{'table-active': element.selected}" (click)="onDetailClick(element)"> -->
+    <tr *ngFor="let musicGroup of musicGroups">
+      <td class="text-center">{{ musicGroup.groupName }}</td>
+      <td class="text-center">{{ musicGroup.origin }}</td>
+      <td class="text-center">{{ musicGroup.city }}</td>
+      <td class="text-center">{{ musicGroup.startYear }}</td>
+      <td class="text-center">{{ musicGroup.endYear }}</td>
+      <td class="text-center">{{ musicGroup.founder }}</td>
+      <td class="text-center">{{ musicGroup.members }}</td>
+      <td class="text-center">{{ musicGroup.musicStyle }}</td>
+      <td class="text-center">{{ musicGroup.presentation }}</td>
+      <td>
+        <button class="btn btn-outline-warning me-2" (click)="goMusicGroupDef(musicGroup.id)">
+          Modifier
+        </button>
+        <button class="btn btn-outline-danger" (click)="onMusicGroupDelete(musicGroup.id)">
+          Supprimer
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

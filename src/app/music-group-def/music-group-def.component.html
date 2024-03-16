@@ -1,0 +1,119 @@
+
+  <h2>Définition d'un groupe de musique</h2>
+
+  <h3>{{ action }}</h3>
+
+      <div class="row mt-4">
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="groupName">Nom du groupe</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.groupName" name="groupName" placeholder="Nom du groupe" type="text" maxlength="255">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Origine</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.origin" name="origin" placeholder="Origine" type="text" maxlength="255">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Ville</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.city" name="city" placeholder="Ville" type="text" maxlength="255">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Année début</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.startYear" name="startYear" placeholder="Année début" type="number">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Année fin</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.endYear" name="endYear" placeholder="Année fin" type="number">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Fondateur</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.founder" name="founder" placeholder="Fondateur" type="text" maxlength="255">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Membres</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.members" name="members" placeholder="Membres" type="number">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Courrant musical</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.musicStyle" name="musicStyle" placeholder="Courrant musical" type="text" maxlength="255">
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label class="form-control-label" for="text-input">Presentation</label>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="form-group">
+            <input required class="form-control" [(ngModel)]="currentMusicGroup.presentation" name="presentation" placeholder="Presentation" type="text" maxlength="255">
+          </div>
+        </div>
+
+
+  </div>
+<!--   <button class="btn btn-danger pull-right" type="submit" (click)="close()"> -->
+
+<button class="btn btn-outline-danger me-2" routerLink="/music-groups">
+  Annuler
+</button>
+<button class="btn btn-outline-success" (click)="sendForm()">
+  Ok
+</button>
+<!--   <button class="btn btn-success pull-right" type="submit" (click)="sendForm()" [disabled]="shelvesService.checkValidCoord(createShelfForm)"> -->
+
+
