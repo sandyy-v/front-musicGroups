@@ -5,6 +5,7 @@
     </button>
   </div>
 </div>
+
 <div class="row mt-4">
   <div class="col-12">
     <h4 class="color-primary">
@@ -15,10 +16,17 @@
 <!--     <input type="file" class="file-upload" onchange="console.log(event.target.files)"> -->
     <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
 <!--     <button class="btn btn-outline-success" (click)="sendForm()"> -->
-    <button class="btn btn-outline-success">
+    <button [disabled]="musicGroupsToAddFromExcel.length == 0 || excelElmsTypeError.length > 0" class="btn btn-outline-success" (click)="sendMusicGroupsFromExcel()">
       Ok
     </button>
   </div>
+ <!-- <div class="col-12">
+    <ngb-alert [type]="danger">{{ excelElmsTypeError }}</ngb-alert>
+  </div>-->
+  <div *ngIf="excelElmsTypeError.length > 0" class="col-12 alert alert-danger mt-2" role="alert">
+    {{ excelElmsTypeError }}
+  </div>
+
 </div>
 
 <div class="mt-4">
